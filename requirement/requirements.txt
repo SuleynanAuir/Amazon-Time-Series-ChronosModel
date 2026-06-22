@@ -1,0 +1,77 @@
+# Chronos-2 Quickstart Dependencies
+# Generated from: notebooks/chronos-2-quickstart.ipynb
+
+# ==============================================================================
+# Core Libraries (Required)
+# ==============================================================================
+
+# Primary forecasting library - Chronos-2 time series foundation model
+# Provides the main pipeline and forecasting functionality
+chronos-forecasting[extras]>=2.2
+
+# Data manipulation and analysis
+pandas>=2.0                    # DataFrame handling, time series data processing
+numpy>=1.21                     # Numerical computing, array operations
+
+# Visualization
+matplotlib>=3.10.0              # Plotting and visualization of forecasts
+
+# ==============================================================================
+# ML/DL Dependencies (Required by chronos-forecasting)
+# ==============================================================================
+
+# PyTorch - Deep learning framework
+torch>=2.2                      # Core tensor operations, model execution
+
+# Hugging Face Transformers - Model loading and inference
+transformers>=4.41              # Transformer model architecture support
+
+# Hugging Face Accelerate - GPU/TPU acceleration
+accelerate>=1.1.0               # Distributed training/inference support
+
+# Parameter-Efficient Fine-Tuning
+peft>=0.18.1                    # LoRA and other PEFT techniques
+
+# Einops - Tensor operations
+einops>=0.7.0                   # Flexible tensor reshaping operations
+
+# ==============================================================================
+# Data and Cloud Dependencies (Required by chronos-forecasting[extras])
+# ==============================================================================
+
+# AWS SDK for Python
+boto3>=1.10                     # AWS S3 access for dataset downloading
+
+# Forecasting Evaluation Metrics
+fev>=0.8.0                      # Forecasting evaluation and visualization tools
+
+# Hugging Face Datasets
+datasets>=2.15                  # Dataset loading and processing utilities
+
+# Pydantic - Data validation
+pydantic~=2.0                   # Data structure validation
+
+# SciPy - Scientific computing
+scipy                           # Statistical functions and optimization
+
+# ==============================================================================
+# Installation Instructions
+# ==============================================================================
+#
+# Install all dependencies with:
+# pip install -r requirements.txt
+#
+# Or install the minimal required packages:
+# pip install 'chronos-forecasting[extras]>=2.2' 'matplotlib'
+#
+# For CPU-only installation (no GPU acceleration):
+# pip install 'chronos-forecasting[extras]>=2.2' 'matplotlib' --extra-index-url https://download.pytorch.org/whl/cpu
+#
+# ==============================================================================
+# Notes
+# ==============================================================================
+# - GPU support is recommended for faster inference (requires CUDA-enabled GPU)
+# - For CPU-only usage, set device_map="cpu" when loading the pipeline
+# - CUDA dependencies (torch with CUDA) are automatically included when installing
+#   on systems with NVIDIA GPUs
+# ==============================================================================
